@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if books %}
+        <p>Books by {{ author }}:</p>
+        <ul>
+            {% for book in books %}
+                <li>
+                    <strong>Title:</strong> {{ book.title }}<br>
+                    <strong>Author:</strong> {{ book.author }}<br>
+                    <strong>Year:</strong> {{ book.year }}<br>
+                    
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books found for author: {{ author }}</p>
+    {% endif %}
+    <a href="/">Back to Search</a>
+</body>
+</html>
